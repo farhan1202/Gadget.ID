@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gadgetid_app/app/data/colors_constants.dart';
+import 'package:gadgetid_app/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
 
@@ -50,6 +51,7 @@ class LoginView extends GetView<LoginController> {
                         hint: "Password",
                         iconD: Icons.lock,
                         passType: true,
+                        textAction: TextInputAction.done,
                       ),
                       SizedBox(
                         height: 20,
@@ -60,7 +62,11 @@ class LoginView extends GetView<LoginController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text("Dont have an account?"),
-                          TextButton(onPressed: () {}, child: Text("Sign Up!"))
+                          TextButton(
+                              onPressed: () {
+                                Get.toNamed(Routes.REGISTER);
+                              },
+                              child: Text("Sign Up!"))
                         ],
                       )
                     ],

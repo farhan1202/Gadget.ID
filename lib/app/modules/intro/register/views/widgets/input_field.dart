@@ -13,7 +13,6 @@ class Inputfield extends StatelessWidget {
   final String hint;
   final bool passType;
   final IconData iconD;
-
   final TextInputAction textAction;
   // final TextEditingController txtC;
   @override
@@ -38,9 +37,8 @@ class Inputfield extends StatelessWidget {
           Expanded(
               child: TextField(
             obscureText: passType,
-
-            textInputAction: textAction,
             // controller: txtC,
+            textInputAction: textAction,
             decoration: InputDecoration(
                 hintText: hint,
                 hintStyle: TextStyle(color: kPrimeryColor.withOpacity(0.5)),
