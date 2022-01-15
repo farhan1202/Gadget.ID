@@ -9,7 +9,7 @@ class HomePages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
+    return Container(
         child: Column(
       children: [
         HeaderHome(size: size),

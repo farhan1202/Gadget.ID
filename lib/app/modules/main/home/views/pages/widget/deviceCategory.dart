@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gadgetid_app/app/modules/main/home/controllers/home_controller.dart';
+import 'package:get/get.dart';
 
 import 'cardCategory.dart';
 
-class DeviceCategory extends StatelessWidget {
+class DeviceCategory extends GetView<HomeController> {
   const DeviceCategory({
     Key? key,
   }) : super(key: key);
@@ -33,6 +35,23 @@ class DeviceCategory extends StatelessWidget {
           ),
         ],
       ),
+      // child: GridView.builder(
+      //   itemCount: controller.list.length,
+      //   shrinkWrap: true,
+      //   physics: NeverScrollableScrollPhysics(),
+      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //     mainAxisSpacing: 20,
+      //     crossAxisCount: 2,
+      //     childAspectRatio: 5 / 1.8,
+      //   ),
+      //   itemBuilder: (context, index) {
+      //     return CardService(
+      //       title: controller.list[index]['title'].toString(),
+      //       subtitle: controller.list[index]['subtitle'].toString(),
+      //       message: controller.list[index]['message'].toString(),
+      //     );
+      //   },
+      // ),
     );
   }
 }
