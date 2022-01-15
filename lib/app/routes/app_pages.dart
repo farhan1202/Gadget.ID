@@ -39,6 +39,7 @@ class AppPages {
       name: _Paths.REGISTER,
       page: () => RegisterView(),
       binding: RegisterBinding(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }

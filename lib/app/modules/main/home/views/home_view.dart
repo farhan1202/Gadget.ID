@@ -25,9 +25,8 @@ class HomeView extends GetView<HomeController> {
         height: size.height,
         child: PageView(
           controller: controller.pageController,
-          onPageChanged: (value) async {
+          onPageChanged: (value) {
             controller.screenIndex.value = value;
-            await Future.delayed(Duration(milliseconds: 300));
             controller.navigationKey.currentState!.setPage(value);
           },
           children: controller.screen,

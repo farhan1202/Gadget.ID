@@ -21,6 +21,13 @@ class HomeController extends GetxController {
     Icon(Icons.settings),
   ];
 
+  final list = [
+    {"title": "Phone", "subtitle": "Smart Phone", "message": "Data 1"},
+    {"title": "Tablet", "subtitle": "Smart Tablet", "message": "Data 2"},
+    {"title": "Laptop", "subtitle": "Portable Desktop", "message": "Data 3"},
+    {"title": "PC", "subtitle": "Desktop", "message": "Data 4"},
+  ];
+
   final screen = [HomePages(), FavoritePages(), UserPages(), SettingPages()];
 
   final PageController pageController = PageController(initialPage: 0);
