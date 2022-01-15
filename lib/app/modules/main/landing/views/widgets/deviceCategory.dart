@@ -3,8 +3,6 @@ import 'package:gadgetid_app/app/data/colors_constants.dart';
 import 'package:gadgetid_app/app/modules/main/home/controllers/home_controller.dart';
 import 'package:get/get.dart';
 
-import 'cardCategory.dart';
-
 class DeviceCategory extends GetView<HomeController> {
   const DeviceCategory({
     Key? key,
@@ -14,37 +12,16 @@ class DeviceCategory extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
-      // child: Column(
-      //   children: [
-      //     Row(
-      //       children: [
-      //         CardService(
-      //             title: "Phone", subtitle: "Smart Phone", message: "Menu 1"),
-      //         CardService(
-      //             title: "Tablet", subtitle: "Smart Tablet", message: "Menu 2"),
-      //       ],
-      //     ),
-      //     SizedBox(
-      //       height: 20,
-      //     ),
-      //     Row(
-      //       children: [
-      //         CardService(
-      //             title: "Laptop", subtitle: "Portable", message: "Menu 3"),
-      //         CardService(title: "PC", subtitle: "Desktop", message: "Menu 4"),
-      //       ],
-      //     ),
-      //   ],
-      // ),
       child: GridView.builder(
         itemCount: controller.list.length,
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           mainAxisSpacing: 10,
           crossAxisCount: 2,
           childAspectRatio: 5 / 2,
         ),
+        padding: EdgeInsets.only(bottom: 15),
         itemBuilder: (context, index) {
           return ListContainer(
             title: controller.list[index]["title"].toString(),

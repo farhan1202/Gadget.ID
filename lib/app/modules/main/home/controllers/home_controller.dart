@@ -1,12 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gadgetid_app/app/modules/main/favorite/views/favorite_view.dart';
+import 'package:gadgetid_app/app/modules/main/landing/views/landing_view.dart';
+import 'package:gadgetid_app/app/modules/main/setting/views/setting_view.dart';
+import 'package:gadgetid_app/app/modules/main/user/views/user_view.dart';
 import 'package:get/get.dart';
-
-import 'package:gadgetid_app/app/modules/main/home/views/pages/favPages.dart';
-import 'package:gadgetid_app/app/modules/main/home/views/pages/homePages.dart';
-import 'package:gadgetid_app/app/modules/main/home/views/pages/settingPages.dart';
-import 'package:gadgetid_app/app/modules/main/home/views/pages/userPages.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
@@ -15,10 +14,17 @@ class HomeController extends GetxController {
   final flag = 0.obs;
 
   final items = [
-    Icon(Icons.home),
-    Icon(Icons.favorite),
-    Icon(Icons.person),
-    Icon(Icons.settings),
+    Icon(CupertinoIcons.home),
+    Icon(CupertinoIcons.star),
+    Icon(CupertinoIcons.person),
+    Icon(CupertinoIcons.gear),
+  ];
+
+  final screen = [
+    LandingView(),
+    FavoriteView(),
+    UserView(),
+    SettingView(),
   ];
 
   final list = [
@@ -28,9 +34,7 @@ class HomeController extends GetxController {
     {"title": "PC", "subtitle": "Desktop", "message": "Data 4"},
   ];
 
-  final screen = [HomePages(), FavoritePages(), UserPages(), SettingPages()];
-
-  final PageController pageController = PageController(initialPage: 0);
+  // final screen = [HomePages(), FavoritePages(), UserPages(), SettingPages()];
 
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
 }

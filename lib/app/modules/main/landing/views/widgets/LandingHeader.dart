@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gadgetid_app/app/data/colors_constants.dart';
 
-class HeaderHome extends StatelessWidget {
-  const HeaderHome({
+class LandingHeader extends StatelessWidget {
+  const LandingHeader({
     Key? key,
     required this.size,
   }) : super(key: key);

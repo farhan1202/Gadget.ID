@@ -11,38 +11,29 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      extendBody: true,
       appBar: AppBar(
         title: Image.asset(
           "assets/images/logo1.png",
           width: size.width * 0.3,
         ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: kPrimeryColor,
+        // backgroundColor: kPrimeryColor,
       ),
-      body: Container(
-        height: size.height,
-        child: PageView(
-          controller: controller.pageController,
-          onPageChanged: (value) {
-            controller.screenIndex.value = value;
-            controller.navigationKey.currentState!.setPage(value);
-          },
-          children: controller.screen,
-        ),
+      body: SafeArea(
+        child: Obx(() => IndexedStack(
+              index: controller.screenIndex.value,
+              children: controller.screen,
+            )),
       ),
       // Obx(() => screen[controller.screenIndex.value]),
       backgroundColor: kBackgroundColor,
       bottomNavigationBar: CurvedNavigationBar(
-        key: controller.navigationKey,
         items: controller.items,
         backgroundColor: Colors.transparent,
         height: 60,
         index: controller.screenIndex.value,
         animationCurve: Curves.easeInOut,
         onTap: (value) {
-          controller.pageController.jumpToPage(value);
+          controller.screenIndex.value = value;
         },
         animationDuration: Duration(milliseconds: 300),
       ),
