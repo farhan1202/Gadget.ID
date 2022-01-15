@@ -1,20 +1,13 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  final screenIndex = 0.obs;
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  final PageController pageController = PageController(initialPage: 0);
 
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  final navigationKey = GlobalKey<CurvedNavigationBarState>();
 }

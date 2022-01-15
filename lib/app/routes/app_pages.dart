@@ -19,16 +19,19 @@ class AppPages {
       name: _Paths.ONBOARD,
       page: () => OnboardView(),
       binding: OnboardBinding(),
+      transition: Transition.rightToLeft,
     ),
     GetPage(
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+      transition: Transition.rightToLeft,
     ),
     GetPage(
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }
